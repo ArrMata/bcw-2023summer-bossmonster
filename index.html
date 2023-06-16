@@ -34,30 +34,26 @@
         <section class="row">
             <div class="col-3">
                 <div id="Slate Slabrock" class="character-card">
-                    <div class="d-flex">
-                        <p class="name">Slate
-                        <div class="d-flex justify-content-end">
-                            <img class="img-fluid character-img"
-                                src="https://preview.redd.it/ib746i4puad81.png?width=437&format=png&auto=webp&s=94127f8b01fed47a5aee5659f034c05de3a03ac9"
-                                alt="">
-                        </div>
-                        </p>
+                    <div class="d-flex justify-content-between">
+                        <p class="name">Slate</p>
+                        <img class="character-img"
+                            src="https://preview.redd.it/ib746i4puad81.png?width=437&format=png&auto=webp&s=94127f8b01fed47a5aee5659f034c05de3a03ac9"
+                            alt="">
                     </div>
-                    <p>HP: <span class="health">15</span></p>
-                    <p>GOLD: <span id="goldAmount">20</span></p>
-                    <p>LEVEL: <span class="level">5</span></p>
+                    <div class="extra-info">
+                        <p>HP: <span class="health">15</span></p>
+                        <p>GOLD: <span id="goldAmount">20</span></p>
+                        <p>LEVEL: <span class="level">5</span></p>
+                    </div>
                 </div>
             </div>
             <div class="col-3">
                 <div id="Flint Ironstag" class="character-card">
-                    <div class="d-flex">
-                        <p class="name">Flint
-                        <div class="d-flex justify-content-end">
-                            <img class="img-fluid character-img bumblebee-img"
-                                src="https://preview.redd.it/ib746i4puad81.png?width=437&format=png&auto=webp&s=94127f8b01fed47a5aee5659f034c05de3a03ac9"
-                                alt="">
-                        </div>
-                        </p>
+                    <div class="d-flex justify-content-between">
+                        <p class="name">Flint</p>
+                        <img class="character-img bumblebee-img"
+                            src="https://preview.redd.it/ib746i4puad81.png?width=437&format=png&auto=webp&s=94127f8b01fed47a5aee5659f034c05de3a03ac9"
+                            alt="">
                     </div>
                     <p>HP: <span class="health">50</span></p>
                     <p>LEVEL: <span class="level">6</span></p>
@@ -70,13 +66,15 @@
                 <div id="boss" onclick="attackBoss()" class="boss-card">
                     <p><span class="currentHealth">100</span>/<span class="maxHealth">100</span></p>
                     <p>SPOOKY SKELETON</p>
-                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5c166dfe-c9a3-4160-8f64-d17e22f1ea6b/d4qharr-eded0a7e-6cd1-484d-977c-22fc8c7bcbf1.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzVjMTY2ZGZlLWM5YTMtNDE2MC04ZjY0LWQxN2UyMmYxZWE2YlwvZDRxaGFyci1lZGVkMGE3ZS02Y2QxLTQ4NGQtOTc3Yy0yMmZjOGM3YmNiZjEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Q_ePxxOcYhFD9PPv2xII-MpgTQ7ImbllQJBn87IwPWc"
-                        alt="">
+                    <div class="w-100 h-100 d-flex justify-content-center">
+                        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5c166dfe-c9a3-4160-8f64-d17e22f1ea6b/d4qharr-eded0a7e-6cd1-484d-977c-22fc8c7bcbf1.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzVjMTY2ZGZlLWM5YTMtNDE2MC04ZjY0LWQxN2UyMmYxZWE2YlwvZDRxaGFyci1lZGVkMGE3ZS02Y2QxLTQ4NGQtOTc3Yy0yMmZjOGM3YmNiZjEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Q_ePxxOcYhFD9PPv2xII-MpgTQ7ImbllQJBn87IwPWc"
+                            alt="">
+                    </div>
                 </div>
             </div>
             <div class="col-12 d-flex justify-content-between">
-                <div>
-                    <button onclick="healCharacter('Slate Slabrock', 20)">Heal Slate 20G</button>
+                <div class="d-flex flex-column">
+                    <button class="mb-3" onclick="healCharacter('Slate Slabrock', 20)">Heal Slate 20G</button>
                     <button onclick="healCharacter('Flint Ironstag', 30)">Heal Flint 30G</button>
                 </div>
                 <button onclick="resetGame()">Reset!</button>

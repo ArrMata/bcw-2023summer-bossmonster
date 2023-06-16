@@ -19,6 +19,7 @@ const heroes = [
 
 let gold = 30
 let bossKillCount = 0
+let gameEnded = false
 
 let boss = {
     health: 100,
@@ -36,17 +37,19 @@ const newBoss = {
 }
 
 function attackBoss() {
-    let combinedAttack = 0
-    heroes.forEach(hero => {
-        combinedAttack += hero.damage
-    })
-    boss.health -= combinedAttack
-    if (boss.health <= 0) {
-        boss.health = 0
+    if (!gameEnded) {
+        let combinedAttack = 0
+        heroes.forEach(hero => {
+            combinedAttack += hero.damage
+        })
+        boss.health -= combinedAttack
+        if (boss.health <= 0) {
+            boss.health = 0
+        }
+        gold += 5
+        hasWon()
+        drawCharacters()
     }
-    gold += 5
-    hasWon()
-    drawCharacters()
 }
 
 
@@ -72,6 +75,7 @@ function hasLost() {
             'error'
         )
         clearInterval(bossAttackInterval)
+        gameEnded = true
     }
 }
 
@@ -91,13 +95,14 @@ function hasWon() {
         drawCharacters()
     }
 
-    if (bossKillCount == 1 && boss.health == 0) {
+    if (bossKillCount == 1 && boss.health == 0 && !gameEnded) {
         Swal.fire(
             'You have won!',
             'Thank you heroes!',
             'success'
         )
         clearInterval(bossAttackInterval)
+        gameEnded = true
     }
 }
 
@@ -111,7 +116,9 @@ function resetGameData() {
         hero.health = hero.maxHealth
     })
     boss.health = boss.maxHealth
+    clearInterval(bossAttackInterval)
     bossAttackInterval = setInterval(attackPlayers, 5000)
+    gameEnded = false
 }
 
 function drawCharacters() {
